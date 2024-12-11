@@ -15,10 +15,12 @@ document.getElementById("day").innerHTML = time;
 const d1 = document.getElementById("dice-1");
 const d2 = document.getElementById("dice-2");
 
+
 const button = document.getElementById("btn");
 
 button.addEventListener('click',roll);
 
+const score = 0;
 function roll(){
     const ran1 = Math.round((Math.random())*10);
     if(ran1 >6){
@@ -34,7 +36,14 @@ function roll(){
     const d2Pic = `dice-${ran2}.svg`
     d2.src = d2Pic
 
+    result = ran1 + ran2
+    if(result >= 8){
+        score += 1
+    }
+    document.getElementById("total").innerHTML = `${score}`;
+
     
 }
+
 
 
