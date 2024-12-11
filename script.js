@@ -20,7 +20,7 @@ const button = document.getElementById("btn");
 
 button.addEventListener('click',roll);
 
-const score = 0;
+let score = 0;
 function roll(){
     const ran1 = Math.round((Math.random())*10);
     if(ran1 >6){
@@ -38,7 +38,7 @@ function roll(){
 
     result = ran1 + ran2
     if(result >= 8){
-        score += 1
+        score = score + 1
     }
     document.getElementById("total").innerHTML = `${score}`;
 
